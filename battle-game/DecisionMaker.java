@@ -9,3 +9,4 @@ public class DecisionMaker {
         return rnd.nextBoolean(); // true = savaş, false = kaç
     }
 }
+
