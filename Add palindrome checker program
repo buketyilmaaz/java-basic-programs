@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+public class ATMSimulation {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        int balance = 1000;
+        int choice;
+
+        while (true) {
+
+            System.out.println("\n===== ATM MENU =====");
+            System.out.println("1- Check Balance");
+            System.out.println("2- Deposit Money");
+            System.out.println("3- Withdraw Money");
+            System.out.println("4- Exit");
+
+            System.out.print("Select an option: ");
+            choice = input.nextInt();
+
+            if (choice == 1) {
+                System.out.println("Your balance: " + balance);
+            }
+
+            else if (choice == 2) {
+                System.out.print("Enter amount to deposit: ");
+                int deposit = input.nextInt();
+                balance += deposit;
+                System.out.println("Deposit successful.");
+            }
+
+            else if (choice == 3) {
+                System.out.print("Enter amount to withdraw: ");
+                int withdraw = input.nextInt();
+
+                if (withdraw > balance) {
+                    System.out.println("Insufficient balance.");
+                } else {
+                    balance -= withdraw;
+                    System.out.println("Withdrawal successful.");
+                }
+            }
+
+            else if (choice == 4) {
+                System.out.println("Thank you for using ATM.");
+                break;
+            }
+
+            else {
+                System.out.println("Invalid option.");
+            }
+        }
+    }
+}
