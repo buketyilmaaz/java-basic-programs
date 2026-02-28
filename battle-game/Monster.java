@@ -19,3 +19,4 @@ public void die() {
     alive = false;
 }
 }
+
